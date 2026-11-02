@@ -35,3 +35,12 @@ Farheen Arif Ahmed
 ## References
 - NIST CSWP 28: Security Segmentation in a Small Manufacturing Environment — https://csrc.nist.gov/pubs/cswp/28/security-segmentation-in-a-small-manufacturing-env/final
 - NIST Cybersecurity Framework — https://www.nist.gov/cyberframework
+## Educational Video Tutorials
+
+### Lab 01 — Basic Manufacturing Network
+
+[Watch Lab 01 on YouTube](https://youtu.be/Bq2QFVUuMB4)
+
+This introductory Cisco Packet Tracer lab demonstrates a flat network with three PCs connected to a Cisco 2960 switch, IPv4 configuration, and connectivity testing using ping commands.
+
+All testing was performed in a simulated environment.
