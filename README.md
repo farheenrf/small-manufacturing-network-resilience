@@ -44,3 +44,74 @@ Farheen Arif Ahmed
 This introductory Cisco Packet Tracer lab demonstrates a flat network with three PCs connected to a Cisco 2960 switch, IPv4 configuration, and connectivity testing using ping commands.
 
 All testing was performed in a simulated environment.
+
+### Lab 02 — VLAN Segmentation in a Manufacturing Network
+
+**Status:** Completed — November 2026
+
+**Video Tutorial:** [Watch Lab 02 on YouTube](https://youtu.be/146XljrteNk)
+
+**Objective:**
+Demonstrate logical network segmentation using VLANs in a simulated small manufacturing environment.
+
+**Simulation Environment:**
+- Tool: Cisco Packet Tracer
+- Switch: Cisco 2960
+- End devices: Three PCs
+- Routing: No inter-VLAN router configured
+
+**Network Configuration:**
+
+| Department | VLAN | Switch Port | IP Address |
+|---|---|---|---|
+| Office | 10 | Fa0/1 | 192.168.10.10 |
+| Admin | 20 | Fa0/3 | 192.168.20.20 |
+| Production | 30 | Fa0/2 | 192.168.30.30 |
+
+**Configuration Commands:**
+```text
+enable
+configure terminal
+
+vlan 10
+name OFFICE
+exit
+
+vlan 20
+name ADMIN
+exit
+
+vlan 30
+name PRODUCTION
+exit
+
+interface fastEthernet 0/1
+switchport mode access
+switchport access vlan 10
+exit
+
+interface fastEthernet 0/3
+switchport mode access
+switchport access vlan 20
+exit
+
+interface fastEthernet 0/2
+switchport mode access
+switchport access vlan 30
+exit
+
+end
+show vlan brief
+```
+
+**Verified Results:**
+- VLAN 10 (OFFICE) assigned to Fa0/1.
+- VLAN 20 (ADMIN) assigned to Fa0/3.
+- VLAN 30 (PRODUCTION) assigned to Fa0/2.
+- All three VLANs displayed as active in `show vlan brief`.
+
+**Limitations:**
+This lab uses a simulated network without inter-VLAN routing. VLAN membership was verified using switch configuration output. Cross-network ping failures alone do not establish comprehensive network security.
+
+**Next Lab:**
+Lab 03 — Controlled Inter-VLAN Access Using ACLs.
